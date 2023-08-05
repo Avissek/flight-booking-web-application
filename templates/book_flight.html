@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+                <h2 class="text-center mb-4">Book Flight</h2>
+                <form method="post" action="{{ url_for('book_flight') }}">
+                    <div class="form-group">
+                        <label for="flight_number">Flight Number</label>
+                        <input type="text" class="form-control" id="flight_number" name="flight_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="departure_time">Departure Time</label>
+                        <input type="time" class="form-control" id="departure_time" name="departure_time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="passenger_name">Passenger Name</label>
+                        <input type="text" class="form-control" id="passenger_name" name="passenger_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="seats">Number of Seats</label>
+                        <input type="number" class="form-control" id="seats" name="seats" min="1" max="60" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
