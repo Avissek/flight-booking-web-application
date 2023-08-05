@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6 col-md-8">
+            <h2 class="text-center mb-4">Search Flights</h2>
+            <form method="post" action="{{ url_for('search_flights') }}">
+                <div class="form-row">
+                    <div class="col">
+                        <label for="date">Date</label>
+                        <input type="date" class="form-control" id="date" name="date" required>
+                    </div>
+                    <div class="col">
+                        <label for="time">Time</label>
+                        <input type="time" class="form-control" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="form-row mt-3">
+                    <div class="col">
+                        <label for="from">From</label>
+                        <input type="text" class="form-control" id="from" name="from" required>
+                    </div>
+                    <div class="col">
+                        <label for="to">To</label>
+                        <input type="text" class="form-control" id="to" name="to" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block mt-3">Search</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
