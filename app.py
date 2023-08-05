@@ -47,7 +47,7 @@ def admin_login():
 @app.route('/admin_panel')
 def admin_panel():
     # TODO: Implement admin panel logic
-    return render_template('admin_panel.html')
+    return render_template('admin.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
