@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-8 col-md-10">
+            <h2 class="text-center mb-4">My Bookings</h2>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Flight Number</th>
+                        <th>Departure Time</th>
+                        <th>Passenger Name</th>
+                        <th>Seats Booked</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.flight_number }}</td>
+                        <td>{{ booking.departure_time }}</td>
+                        <td>{{ booking.passenger_name }}</td>
+                        <td>{{ booking.seats }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
