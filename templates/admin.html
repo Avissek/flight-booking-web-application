@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-6 col-md-8">
+            <h2 class="text-center mb-4">Admin Panel</h2>
+            <h4 class="mb-3">Login</h4>
+            <form method="post" action="{{ url_for('admin_login') }}">
+                <div class="form-group">
+                    <label for="admin_email">Admin Email</label>
+                    <input type="email" class="form-control" id="admin_email" name="admin_email" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin_password">Admin Password</label>
+                    <input type="password" class="form-control" id="admin_password" name="admin_password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+
+            <hr class="mt-5">
+
+            <h4 class="mb-3">Add Flights</h4>
+            <form method="post" action="{{ url_for('add_flight') }}">
+                <div class="form-group">
+                    <label for="flight_number">Flight Number</label>
+                    <input type="text" class="form-control" id="flight_number" name="flight_number" required>
+                </div>
+                <div class="form-group">
+                    <label for="departure_time">Departure Time</label>
+                    <input type="time" class="form-control" id="departure_time" name="departure_time" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Add Flight</button>
+            </form>
+
+            <hr class="mt-5">
+
+            <h4 class="mb-3">Remove Flights</h4>
+            <form method="post" action="{{ url_for('remove_flight') }}">
+                <div class="form-group">
+                    <label for="flight_number_remove">Flight Number</label>
+                    <input type="text" class="form-control" id="flight_number_remove" name="flight_number_remove" required>
+                </div>
+                <button type="submit" class="btn btn-danger btn-block">Remove Flight</button>
+            </form>
+
+            <hr class="mt-5">
+
+            <h4 class="mb-3">View Bookings</h4>
+            <form method="post" action="{{ url_for('view_bookings') }}">
+                <div class="form-group">
+                    <label for="flight_number_view">Flight Number</label>
+                    <input type="text" class="form-control" id="flight_number_view" name="flight_number_view" required>
+                </div>
+                <div class="form-group">
+                    <label for="departure_time_view">Departure Time</label>
+                    <input type="time" class="form-control" id="departure_time_view" name="departure_time_view" required>
+                </div>
+                <button type="submit" class="btn btn-info btn-block">View Bookings</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
